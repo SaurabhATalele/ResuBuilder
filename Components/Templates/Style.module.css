@@ -1,0 +1,76 @@
+.resume{
+    width: 100%;
+    height: 100%;
+}
+
+.header{
+    background-color: #00aeff;
+    color: white;
+    padding: 20px;
+}
+
+.name{
+    font-size: 2.4rem;
+}
+
+.personal__info{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.phone,.email,.linkedin{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.3rem;
+}
+
+.section{
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.heading{
+    font-size: 1.8rem;
+}
+
+.resume__entry{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 1.4rem;
+}
+
+.entry__name{
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #00aeff;
+}
+
+.row__main{
+    display: flex;
+    justify-content: space-between;
+}
+
+.duration{
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.entry__place{
+    font-size: 1.2rem;
+}
+
+.points{
+    list-style: disc;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}

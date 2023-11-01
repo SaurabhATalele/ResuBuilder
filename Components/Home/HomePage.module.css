@@ -1,0 +1,137 @@
+.home__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  padding: 100px;
+  overflow: auto;
+  background-color: transparent;
+}
+
+.intro {
+  display: flex;
+  gap: 10rem;
+}
+
+.image {
+  width: 50rem;
+  height: auto;
+  object-fit: contain;
+  z-index: 2;
+}
+
+.home__text {
+  /* width: 50rem; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  z-index: 2;
+  width:50%;
+}
+
+.home__text h1 {
+  font-size: 4.8rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.unique__text {
+  font-size: 2rem;
+  font-weight: 200;
+  color: var(--color-dark);
+}
+
+.home__text p {
+  font-size: 1.8rem;
+  font-weight: 200;
+  color: var(--color-white);
+}
+
+.homeButton {
+  width: fit-content;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid var(--color-white);
+  transition: all 0.3s ease-in-out;
+  background: transparent;
+  color: var(--color-white);
+  font-size: 1.2rem;
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+.homeButton:hover{
+  background-color:rgb(238, 179, 52);
+  width:200px;
+  height:50px;
+  color:white;
+}
+
+.highlighter {
+  width: 80vw;
+  min-height: 500px;
+  position: relative;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.164);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  overflow: hidden;
+}
+
+.heading{
+    position: absolute;
+    right: 3rem;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 20px;
+    
+    align-items:center;
+}
+.span{
+  color:rgb(255, 196, 0);
+  font-size:30px;
+}
+
+
+.sample__resume{
+    width: 50rem;
+    height: auto;
+    position: absolute;
+    left: 5rem;
+    bottom: -30rem;
+    border-radius: 20px;
+    
+}
+
+@media screen and (max-width: 768px) {
+  .home__container {
+    padding: 50px;
+  }
+  .intro {
+    margin-top: 50px;
+    flex-direction: column;
+    gap: 5rem;
+  }
+  .image {
+    width: 100%;
+  }
+  .home__text {
+    width: 100%;
+    /* text-align: center; */
+  }
+  .home__text h1 {
+    font-size: 3.5rem;
+  }
+  .home__text p {
+    font-size: 1.5rem;
+  }
+  .test {
+    width: 90vw;
+  }
+}

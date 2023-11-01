@@ -1,0 +1,22 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --color-primary:#BA68C8;
+    --color-secondary:#713ABE;
+    --color-tertiary:#3B0B5B;
+    --color-light:#E5CFF7;
+    --color-dark: #252525;
+    --color-white:#fff;
+}
+
+body,html{
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(var(--color-secondary),var(--color-tertiary)) !important;
+    font-size: 62.5%;
+}

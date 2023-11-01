@@ -1,0 +1,28 @@
+'use client'
+import styles from './Sidebar.module.css'
+import Image from 'next/image'
+import { useState } from 'react'
+const Sidebar = ({sidebar,setSidebar}) => {
+    const [tab, setTab] = useState(1)
+  return (
+    <>
+        <Image src={'/icons/Menu.png'} width={48} height={48} className={styles.menu__button} onClick={()=>{ console.log(sidebar)
+            setSidebar(!sidebar)}}/>
+    <div className={`${styles.sidebar} ${sidebar?styles.sidebar__open:styles.sidebar__close}`}>
+        <h1 className={styles.logo}>ResuBuilder</h1>
+      <div className={styles.options__menu}>
+        <ul>
+            <li className={tab===1?styles.active__tab:"None"} onClick={()=>setTab(1)}><Image src={"/icons/HomeIcon.png"} width={96} height={96} className={styles.icon}/> Dashboard</li>
+            <li className={tab===2?styles.active__tab:'None'} onClick={()=>setTab(2)}><Image src={"/icons/user.png"} width={96} height={96} className={styles.icon}/> Account</li>
+            <li className={tab===3?styles.active__tab:'None'} onClick={()=>setTab(3)}><Image src={"/icons/credits.png"} width={96} height={96} className={styles.icon}/> Buy Credits</li>
+        </ul>
+      </div>
+      <div className={styles.logout}>
+            <Image src={"/icons/logout.png"} width={96} height={96} className={styles.logout__icon}/> Logout
+      </div>
+    </div>
+    </>
+  )
+}
+
+export default Sidebar
