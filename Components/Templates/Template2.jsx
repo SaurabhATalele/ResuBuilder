@@ -15,7 +15,7 @@ const Template2 = ({ data }) => {
           <span className={styles.phone}>
             {" "}
             <Image
-              src={"/images/white/phone.png"}
+              src={"/images/white/Phone.png"}
               className={styles.image}
               width={18}
               height={18}

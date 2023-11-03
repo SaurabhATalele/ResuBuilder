@@ -47,7 +47,7 @@ const Login = () => {
       </div>
         <h2 className={styles.main__heading}>Welcome to Resume Builder</h2>
         <div className={styles.loginpage__overlay}>
-            <Image src='/login.svg' width={500} height={500} className={styles.image} />
+            <Image src='/Login.svg' width={500} height={500} className={styles.image} />
         <div className={styles.container}>
             <h1 className={styles.heading} >Register</h1>
             <form className={styles.loginform} onSubmit={userSignup}>
