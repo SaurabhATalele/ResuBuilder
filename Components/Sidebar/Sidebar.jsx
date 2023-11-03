@@ -2,8 +2,17 @@
 import styles from './Sidebar.module.css'
 import Image from 'next/image'
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+import cookieCutter from 'cookie-cutter'
 const Sidebar = ({sidebar,setSidebar}) => {
     const [tab, setTab] = useState(1)
+    const router = useRouter()
+
+    const logout = ()=>{
+        cookieCutter.set('user','')
+        router.push('/')
+    }
+
   return (
     <>
         <Image src={'/icons/Menu.png'} width={48} height={48} className={styles.menu__button} onClick={()=>{ console.log(sidebar)
@@ -17,7 +26,7 @@ const Sidebar = ({sidebar,setSidebar}) => {
             <li className={tab===3?styles.active__tab:'None'} onClick={()=>setTab(3)}><Image src={"/icons/credits.png"} width={96} height={96} className={styles.icon}/> Buy Credits</li>
         </ul>
       </div>
-      <div className={styles.logout}>
+      <div className={styles.logout} onClick={logout}>
             <Image src={"/icons/logout.png"} width={96} height={96} className={styles.logout__icon}/> Logout
       </div>
     </div>

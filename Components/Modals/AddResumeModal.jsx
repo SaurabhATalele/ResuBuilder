@@ -40,7 +40,7 @@ const AddResumeModal = ({ isOpen, onRequestClose, onSubmit }) => {
       />
       <div className={styles.buttons}>
 
-      <button onClick={handleSubmit}>Create</button>
+      <button onClick={handleSubmit} className={styles.modal__button}>Create</button>
       <button onClick={onRequestClose} className={styles.btn__red}>Cancel</button>
       </div>
     </Modal>

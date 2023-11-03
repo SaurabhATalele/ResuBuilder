@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { UserModel } from "@/utils/backend/UserModel";
-import { connectDB } from "@/utils/backend/mongoDB";
+import { UserModel } from "@/Utils/Backend/UserModel";
+import { connectDB } from "@/Utils/Backend/mongoDB";
 import bcrypt from "bcryptjs";
 
 

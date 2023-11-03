@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { ResumeModel } from "@/utils/backend/ResumeModel";
-import { connectDB } from "@/utils/backend/mongoDB";
+import { ResumeModel } from "@/Utils/Backend/ResumeModel";
+import { connectDB } from "@/Utils/Backend/mongoDB";
 
 export async function POST(req, res) {
     const { name,user} = await req.json();
