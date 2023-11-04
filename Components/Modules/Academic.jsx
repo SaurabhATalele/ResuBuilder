@@ -119,6 +119,8 @@ const Academic = ({ id, resumeData, getData,setActiveTab }) => {
 
   // function to delete the required project from the list
   const deleteEducationHandler = async (index) => {
+    const userResponse = window.confirm("Are you sure to delete?")
+    if(!userResponse)return
     console.log(education[index]._id);
     const res = await deleteEducation({ id, eduID: education[index]._id });
     res.error ? toast.error(res.error, {

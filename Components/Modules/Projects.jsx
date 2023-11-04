@@ -122,6 +122,8 @@ const Projects = ({ id, resumeData, getData,setActiveTab }) => {
 
   // function to delete the required project from the list
   const deleteProjectHandler = async (index) => {
+    const userResponse = window.confirm("Are you sure to delete?")
+    if(!userResponse)return
     const res = await deleteProject({ id, project: projects[index] });
     getData();
     console.log(res);

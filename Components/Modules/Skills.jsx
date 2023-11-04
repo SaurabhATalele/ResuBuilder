@@ -27,7 +27,10 @@ const Skills = ({ id, resumeData, getData,setActiveTab }) => {
 
   // delete the skills
   const deleteSkillHandler = async (index) => {
+    const userResponse = window.confirm("Are you sure to delete?")
+    if(!userResponse)return
     const skill = skills[index]?._id
+
     console.log(id);
     const res = await deleteSkill({
       id,

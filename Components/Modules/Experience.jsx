@@ -89,7 +89,9 @@ const Experience = ({ id, resumeData, getData, setActiveTab }) => {
   };
 
   // function to delete the required project from the list
-  const deleteProject = async (index) => {
+  const deleteExperienceHandler = async (index) => {
+    const userResponse = window.confirm("Are you sure to delete?")
+    if(!userResponse)return
     const newProjects = [...projects];
     const res = await deleteExperience({ id, expID: projects[index]._id });
     res.error ? toast.error(res.error, {
@@ -217,7 +219,7 @@ const Experience = ({ id, resumeData, getData, setActiveTab }) => {
                 </button>
                 <button
                   className={styles.delete__button}
-                  onClick={() => deleteProject(index)}
+                  onClick={() => deleteExperienceHandler(index)}
                 >
                   Delete
                 </button>
