@@ -9,6 +9,7 @@ import {
   updateProject,
 } from "@/Utils/ApiCalls/Projects";
 import cookieCutter from "cookie-cutter";
+import { ToastContainer,toast } from "react-toastify";
 const Projects = ({ id, resumeData, getData,setActiveTab }) => {
   const [projects, setProjects] = useState([]);
 
@@ -50,6 +51,26 @@ const Projects = ({ id, resumeData, getData,setActiveTab }) => {
       project: edit,
     };
     const res = await updateProject(newData);
+    res.error ? toast.error(res.error, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    }) :
+    toast.success(res.message, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
     getData();
     console.log(res);
     setTitle("");
@@ -69,6 +90,26 @@ const Projects = ({ id, resumeData, getData,setActiveTab }) => {
       link: e.target[1].value,
     };
     const res = await addProject(newProject);
+    res.error ? toast.error(res.error, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    }) :
+    toast.success(res.message, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
     getData();
     console.log(res);
     const newProjects = [...projects];
@@ -118,6 +159,9 @@ const Projects = ({ id, resumeData, getData,setActiveTab }) => {
 
   return (
     <div className={styles.container}>
+      <div className={styles.toast}>
+      <ToastContainer />
+      </div>
       <div className={styles.left__block}>
         <h4>Your Projects</h4>
         {projects.map((project, index) => {
