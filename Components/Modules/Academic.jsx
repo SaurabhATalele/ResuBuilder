@@ -7,6 +7,10 @@ import {
   updateEducation,
 } from "@/Utils/ApiCalls/Education";
 import cookieCutter from "cookie-cutter";
+import { ToastContainer,toast } from "react-toastify";
+
+
+
 const Academic = ({ id, resumeData, getData,setActiveTab }) => {
   const [education, setEducation] = useState([]);
   const [qualification, setQualification] = useState("");
@@ -34,7 +38,27 @@ const Academic = ({ id, resumeData, getData,setActiveTab }) => {
       score,
     };
 
-    await addEducation(newEducation);
+    const res = await addEducation(newEducation);
+    res.error ? toast.error(res.error, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    }) :
+    toast.success(res.message, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
     getData();
     const newEducations = [...education];
     newEducations.push(newEducation);
@@ -60,7 +84,27 @@ const Academic = ({ id, resumeData, getData,setActiveTab }) => {
       eduID: edit,
     };
 
-    await updateEducation(newEducation);
+    const res = await updateEducation(newEducation);
+    res.error ? toast.error(res.error, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    }) :
+    toast.success(res.message, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
     getData();
     const newEducations = [...education];
     newEducations.push(newEducation);
@@ -77,6 +121,26 @@ const Academic = ({ id, resumeData, getData,setActiveTab }) => {
   const deleteEducationHandler = async (index) => {
     console.log(education[index]._id);
     const res = await deleteEducation({ id, eduID: education[index]._id });
+    res.error ? toast.error(res.error, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    }) :
+    toast.success(res.message, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
     getData();
     console.log("response is :", res);
     const newEducation = [...education];
@@ -96,6 +160,9 @@ const Academic = ({ id, resumeData, getData,setActiveTab }) => {
 
   return (
     <div className={styles.container}>
+      <div className={styles.toast}>
+      <ToastContainer />
+      </div>
       <div className={styles.left__block}>
         <h4>Your Academic Details</h4>
         {education.map((edu, index) => {

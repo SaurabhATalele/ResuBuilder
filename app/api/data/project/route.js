@@ -86,7 +86,7 @@ export const PUT = async (req, res) => {
       return new NextResponse(
       JSON.stringify({
           success: true,
-          message: "Skill Updated Successfully",
+          message: "Project Updated Successfully",
       }),
       {
           status: 200,

@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import styles from "./Style.module.css";
 import { addSkill, deleteSkill, updateSkill } from "@/Utils/ApiCalls/Skills";
 import cookieCutter from "cookie-cutter";
-import { set } from "mongoose";
+import { ToastContainer,toast } from "react-toastify";
+
 
 const Skills = ({ id, resumeData, getData,setActiveTab }) => {
   const [skills, setSkills] = useState([]);
@@ -33,6 +34,26 @@ const Skills = ({ id, resumeData, getData,setActiveTab }) => {
       user: cookieCutter.get("user"),
       skill
     });
+    res.error ? toast.error(res.error, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    }) :
+    toast.success(res.message, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
     getData();
     console.log(res);
     const newSkills = [...skills];
@@ -50,6 +71,26 @@ const Skills = ({ id, resumeData, getData,setActiveTab }) => {
       skill: edit,
     };
     const res = await updateSkill(newSkill);
+    res.error ? toast.error(res.error, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    }) :
+    toast.success(res.message, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
     getData();
     console.log(res);
     setTag("");
@@ -67,6 +108,26 @@ const Skills = ({ id, resumeData, getData,setActiveTab }) => {
       skills: skill,
     };
     const res = await addSkill(newSkill);
+    res.error ? toast.error(res.error, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    }) :
+    toast.success(res.message, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
     getData();
     console.log(res);
     const newSkills = [...skills];
@@ -78,6 +139,9 @@ const Skills = ({ id, resumeData, getData,setActiveTab }) => {
 
   return (
     <div className={styles.container}>
+      <div className={styles.toast}>
+      <ToastContainer />
+      </div>
       <div className={styles.left__block}>
       <h4>Your Skills</h4>
         {skills.length === 0 ? (

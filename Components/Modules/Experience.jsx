@@ -9,6 +9,9 @@ import {
   updateExperience,
 } from "../../Utils/ApiCalls/addExperience";
 import cookieCutter from "cookie-cutter";
+import { ToastContainer,toast } from "react-toastify";
+
+
 const Experience = ({ id, resumeData, getData, setActiveTab }) => {
   console.log(resumeData);
   const [projects, setProjects] = useState([]);
@@ -54,7 +57,27 @@ const Experience = ({ id, resumeData, getData, setActiveTab }) => {
       duration,
     };
     console.log(newProject);
-    addExperience(newProject);
+    const res = await addExperience(newProject);
+    res.error ? toast.error(res.error, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    }) :
+    toast.success(res.message, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
     const newProjects = [...projects];
     newProjects.push(newProject);
     setProjects(newProjects);
@@ -69,7 +92,26 @@ const Experience = ({ id, resumeData, getData, setActiveTab }) => {
   const deleteProject = async (index) => {
     const newProjects = [...projects];
     const res = await deleteExperience({ id, expID: projects[index]._id });
-    console.log(res);
+    res.error ? toast.error(res.error, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    }) :
+    toast.success(res.message, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
     newProjects.splice(index, 1);
     setProjects(newProjects);
     getData();
@@ -98,7 +140,29 @@ const Experience = ({ id, resumeData, getData, setActiveTab }) => {
       duration,
       expID: edit,
     };
-    await updateExperience(newExperience);
+    const res = await updateExperience(newExperience);
+    // show the toast after updation 
+    res.error ? toast.error(res.error, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    }) :
+    toast.success(res.message, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+    // update the data from database 
     getData();
     const newProjects = [...projects];
     newProjects.push(newExperience);
@@ -134,6 +198,9 @@ const Experience = ({ id, resumeData, getData, setActiveTab }) => {
 
   return (
     <div className={styles.container}>
+      <div className={styles.toast}>
+      <ToastContainer />
+      </div>
       <div className={styles.left__block}>
         <h4>Your Experience</h4>
         {projects.map((project, index) => {
