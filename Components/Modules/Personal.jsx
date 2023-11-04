@@ -6,7 +6,7 @@ import cookieCutter from  'cookie-cutter'
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const Personal = ({id,resumeData}) => {
+const Personal = ({id,resumeData,setActiveTab}) => {
     const [data,setData] = useState({name:'',email:'',phone:'',linkedin:'',personalSite:'',country:'',state:'',city:''})
     useEffect(() => {
         console.log("resumedata",resumeData);
@@ -82,7 +82,7 @@ const Personal = ({id,resumeData}) => {
         </div>
 
         <div className={styles.buttons__}>
-            <button className={styles.next__button}>Next</button>
+            <button className={styles.next__button} onClick={()=>setActiveTab("experience")}>Next</button>
             <button className={styles.save__button}>Save</button>
         </div>
      </form>

@@ -12,11 +12,11 @@ const Template1 = ({data}) => {
     <div className={styles.resume}>
         
         <header className={styles.header}>
-            <h3 className={styles.name}>{resumeData.personalInfo.name}</h3>
+            <h3 className={styles.name}>{resumeData?.personalInfo?.name}</h3>
             <div className={styles.personal__info}>
-                <span className={styles.phone}> <Image src={'/images/phone.png'} className={styles.image} width={12} height={12} alt='phone'/> {resumeData.personalInfo.phone}</span>
-                <span className={styles.email}><Image src={'/images/email.png'} className={styles.image} width={10} height={10} alt='phone'/>{resumeData.personalInfo.email}</span>
-                <span className={styles.linkedin}><Image src={'/images/linkedin.png'} className={styles.image} width={10} height={10} alt='phone'/>{resumeData.personalInfo.linkedin}</span>
+                <span className={styles.phone}> <Image src={'/images/phone.png'} className={styles.image} width={12} height={12} alt='phone'/> {resumeData?.personalInfo?.phone}</span>
+                <span className={styles.email}><Image src={'/images/email.png'} className={styles.image} width={10} height={10} alt='phone'/>{resumeData?.personalInfo?.email}</span>
+                <span className={styles.linkedin}><Image src={'/images/linkedin.png'} className={styles.image} width={10} height={10} alt='phone'/>{resumeData?.personalInfo?.linkedin}</span>
             </div>
             
         </header>

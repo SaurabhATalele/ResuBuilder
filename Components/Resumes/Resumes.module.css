@@ -1,97 +1,104 @@
-.resumes{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--color-white);
-    padding: 20px;
-    gap: 2rem;
-    border-radius: .5rem;
-    color: var(--color-dark);
-
+.resumes {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem 5rem;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.heading{
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+.heading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
-.resume__container{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    flex-direction: column;
+.resume__container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  flex-direction: column;
 }
-.resume__card{
-    width: 100%;
-    height: 5rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    justify-content: space-between;
-    background-color: var(--color-white);
-    border-bottom: 1px solid var(--color-light);
-}
-
-.create__button{
-    width: fit-content;
-    height: 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    border-radius: .5rem;
-    border: none;
-    font-size: 1.2rem;
-    font-weight: 600;
-    cursor: pointer;
-    padding: 1rem;
-    transition: all .3s ease-in-out;
+.resume__card {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  justify-content: space-between;
+  background-color: var(--color-white);
+  border-radius: 5px;
+  color: var(--color-dark);
+  border-bottom: 1px solid var(--color-light);
 }
 
-.resume__list{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
+.create__button {
+  width: fit-content;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: var(--color-primary); */
+  color: var(--color-white);
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-white);
+  background-color: transparent;
+  font-size: 1.2rem;
+  font-weight: 200;
+  cursor: pointer;
+  padding: 1rem;
+  transition: all 0.3s ease-in-out;
 }
 
-
-
-.resume__edit,.resume__delete{
-    width: fit-content;
-    padding: 1rem;
-    border: none;
-    border-radius: .5rem;
-    color: var(--color-white);
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-    cursor: pointer;
+.resume__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.resume__edit{
-    /* color: var(--color-dark);
+.resume__edit,
+.resume__delete {
+  width: fit-content;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.resume__edit {
+  /* color: var(--color-dark);
     border: 1px solid var(--color-dark); */
-    background-color: transparent;
+  background-color: transparent;
 }
 
-.resume__delete{
-    /* color: red;
+.resume__delete {
+  /* color: red;
     border: 1px solid red; */
-    background-color: transparent;
+  background-color: transparent;
 }
 
-.buttons{
-    display: flex;
-    /* gap: 2rem; */
+.buttons {
+  display: flex;
+  /* gap: 2rem; */
 }
 
-.resume__name{
-    font-size: 1.6rem;
-    font-weight: 600;
+.resume__name {
+  font-size: 1.6rem;
+  font-weight: 600;
 }

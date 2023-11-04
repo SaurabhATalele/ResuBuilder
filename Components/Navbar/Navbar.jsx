@@ -10,7 +10,7 @@ const Navbar = () => {
         <li>Pricing</li>
         <li>Build</li>
         <Link href='/login' className={styles.link}>
-        <li className={styles.button}>Login</li>
+        <li className={styles.login__link}>Login</li>
         </Link>
       </ul>
     </div>

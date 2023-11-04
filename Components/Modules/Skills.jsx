@@ -4,7 +4,7 @@ import { addSkill, deleteSkill, updateSkill } from "@/Utils/ApiCalls/Skills";
 import cookieCutter from "cookie-cutter";
 import { set } from "mongoose";
 
-const Skills = ({ id, resumeData, getData }) => {
+const Skills = ({ id, resumeData, getData,setActiveTab }) => {
   const [skills, setSkills] = useState([]);
 
   const [tag, setTag] = useState("");
@@ -79,6 +79,7 @@ const Skills = ({ id, resumeData, getData }) => {
   return (
     <div className={styles.container}>
       <div className={styles.left__block}>
+      <h4>Your Skills</h4>
         {skills.length === 0 ? (
           <h4>No Skills Added</h4>
         ) : (
@@ -107,7 +108,7 @@ const Skills = ({ id, resumeData, getData }) => {
         )}
       </div>
       <div className={styles.__details}>
-        <h4>Add your experience</h4>
+        <h4>Add your skills</h4>
         <form className={styles.form__vertical} onSubmit={addSkills}>
           <div className={styles.input__box}>
             <label htmlFor="Tag">Tag Name</label>
@@ -130,13 +131,26 @@ const Skills = ({ id, resumeData, getData }) => {
             />
           </div>
           <div className={styles.buttons__}>
+            {
+              !edit &&
             <button className={styles.add_button}>Add</button>
+            }
             {
               edit &&
                 <button className={styles.add_button} onClick={updateSkills}>
               Edit
             </button>
             }
+
+<button
+              className={styles.next__button}
+              onClick={(e) => {
+                e.preventDefault();
+                setActiveTab("preview");}
+              }
+            >
+              Next
+            </button>
           </div>
         </form>
       </div>

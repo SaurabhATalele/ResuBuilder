@@ -6,7 +6,7 @@
   gap: 5rem;
   padding: 100px;
   overflow: auto;
-  background-color: transparent;
+  background-color: var(--color-primary);
 }
 
 .intro {
@@ -38,9 +38,7 @@
 }
 
 .unique__text {
-  font-size: 2rem;
-  font-weight: 200;
-  color: var(--color-dark);
+  color: var(--color-white) !important;
 }
 
 .home__text p {
@@ -53,7 +51,7 @@
   width: fit-content;
   padding: 10px 20px;
   border-radius: 5px;
-  border: 1px solid var(--color-white);
+  border: 1px solid var(--color-dark);
   transition: all 0.3s ease-in-out;
   background: transparent;
   color: var(--color-white);
@@ -79,7 +77,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  color: var(--color-white);
+  color: var(--color-primary);
   overflow: hidden;
 }
 
@@ -88,7 +86,7 @@
     right: 3rem;
     font-size: 30px;
     font-weight: 700;
-    color: var(--color-white);
+    color: var(--color-primary);
     margin-bottom: 20px;
     
     align-items:center;
@@ -135,3 +133,40 @@
     width: 90vw;
   }
 }
+
+.button:hover{cursor: pointer}
+    .button {
+      width: fit-content;
+      background: transparent; outline: none;
+      position: relative;
+      border: 1px solid var(--color-white);
+      color: var(--color-white);
+      padding: 15px 50px;
+      overflow: hidden;
+      border-radius: 5px;
+    }
+
+    /*button:before (attr data-hover)*/
+    .button:hover:before{opacity: 1; transform: translate(0,0);}
+    .button:before{
+      content: attr(data-hover);
+      position: absolute;
+      top: 1.3em; left: 0;
+      width: 100%;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 500;
+      font-size: .8em;
+      opacity: 0;
+      transform: translate(-100%,0);
+      transition: all .3s ease-in-out;
+    }
+      /*button div (button text before hover)*/
+      .button:hover div{opacity: 0; transform: translate(100%,0)}
+      .button div{
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-weight: 500;
+        font-size: .8em;
+        transition: all .3s ease-in-out;
+      }

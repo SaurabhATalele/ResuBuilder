@@ -9,11 +9,11 @@ const HomePage = () => {
         <Image src={'/Home.png'} width={1000} height={1000} className={styles.image}></Image>
         <div className={styles.home__text}>
             <h1>The way the world makes resumes.
-The smartest AI resume builder.</h1>
+The smartest <span className={styles.unique__text}>AI resume builder</span></h1>
             <p>Experience effortless resume creation with our AI Resume Builder. Instantly craft a standout resume!
             </p>
 
-            <button className={styles.homeButton}>Get Started</button>
+            <button className={styles.button} data-hover="Get Started!"><div>Create Your Resume</div></button>
 
           </div>
       </div>

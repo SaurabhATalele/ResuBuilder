@@ -45,6 +45,13 @@
     color: var(--color-black);
     outline: none;
     padding-left: 1rem;
+    background-color: transparent;
+}
+
+.input__box input::placeholder
+
+{
+    color: var(--color-placeholder);
 }
 
 .buttons__{
@@ -135,8 +142,8 @@ __________________________________________________________________________*/
     border: none;
     font-size: 1.2rem;
     color: var(--color-primary);
-    border: 1px solid var(--color-primary);
-    background-color:transparent;
+    /* border: 1px solid var(--color-primary); */
+    background-color:var(--color-white);
     cursor: pointer;
     outline: none;
 }
@@ -147,8 +154,8 @@ __________________________________________________________________________*/
     border: none;
     font-size: 1.2rem;
     color:#ff0000 ;
-    border: 1px solid #ff0000;
-    background-color: transparent;
+    /* border: 1px solid #ff0000; */
+    background-color: white;
     cursor: pointer;
     outline: none;
 }
@@ -193,7 +200,7 @@ __________________________________________________________________________*/
     border-radius: 0.5rem;
     font-size: 1.4rem;
     color: var(--color-primary);
-    background-color: transparent;
+    background-color: var(--color-white);
 }
 
 .desc{
@@ -208,7 +215,7 @@ __________________________________________________________________________*/
 }
 
 .required__field{
-    color: red;
+    color: rgb(255, 128, 128);
     font-size: 1.2rem;
 }
 
@@ -241,18 +248,25 @@ __________________________________________________________________________*/
     border-radius: 0.5rem;
     border:none;
     font-size: 1.6rem;
-    color: var(--color-black);
+    color: var(--color-white);
+    background-color: transparent;
     outline: none;
     padding-left: 1rem;
 
+}
+
+.point__input::placeholder{
+    font-weight: 200;
+    color: var(--color-placeholder);
 }
 
 .delete__point__button{
     padding: .5rem;
     text-align: center;
     border-radius: 0.5rem;
-    border: 1px solid #ff0000;
-    background-color: transparent;
+    /* border: 1px solid #ff0000; */
+    border: none;
+    background-color: var(--color-white);
     font-size: 1.6rem;
     color: #ff0000;
 }

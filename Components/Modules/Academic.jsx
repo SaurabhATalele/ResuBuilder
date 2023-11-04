@@ -1,9 +1,13 @@
 "use client";
 import { useEffect, useState } from "react";
 import styles from "./Style.module.css";
-import { addEducation,deleteEducation,updateEducation } from "@/Utils/ApiCalls/Education";
+import {
+  addEducation,
+  deleteEducation,
+  updateEducation,
+} from "@/Utils/ApiCalls/Education";
 import cookieCutter from "cookie-cutter";
-const Academic = ({id,resumeData,getData}) => {
+const Academic = ({ id, resumeData, getData,setActiveTab }) => {
   const [education, setEducation] = useState([]);
   const [qualification, setQualification] = useState("");
   const [institute, setinstitute] = useState("");
@@ -14,21 +18,20 @@ const Academic = ({id,resumeData,getData}) => {
 
   useEffect(() => {
     if (resumeData) {
-      setEducation(resumeData); 
+      setEducation(resumeData);
     }
   }, [resumeData]);
 
-
-  const addEducationHandler = async(e) => {
+  const addEducationHandler = async (e) => {
     e.preventDefault();
     const newEducation = {
-        id,
-        user:cookieCutter.get('user'),
-        qualification,
-        institute,
-        specialization,
-        duration,
-        score
+      id,
+      user: cookieCutter.get("user"),
+      qualification,
+      institute,
+      specialization,
+      duration,
+      score,
     };
 
     await addEducation(newEducation);
@@ -41,20 +44,20 @@ const Academic = ({id,resumeData,getData}) => {
     setSpecialization("");
     setDuration("");
     setScore("");
-}
+  };
 
-// update the education details 
-const updateEducationHandler = async(e) => {
+  // update the education details
+  const updateEducationHandler = async (e) => {
     e.preventDefault();
     const newEducation = {
-        id,
-        user:cookieCutter.get('user'),
-        qualification,
-        institute,
-        specialization,
-        duration,
-        score,
-        eduID:edit
+      id,
+      user: cookieCutter.get("user"),
+      qualification,
+      institute,
+      specialization,
+      duration,
+      score,
+      eduID: edit,
     };
 
     await updateEducation(newEducation);
@@ -68,14 +71,14 @@ const updateEducationHandler = async(e) => {
     setDuration("");
     setScore("");
     setEdit("");
-}
+  };
 
   // function to delete the required project from the list
   const deleteEducationHandler = async (index) => {
     console.log(education[index]._id);
-    const res = await deleteEducation({id,eduID:education[index]._id});
+    const res = await deleteEducation({ id, eduID: education[index]._id });
     getData();
-    console.log("response is :",res);
+    console.log("response is :", res);
     const newEducation = [...education];
     newEducation.splice(index, 1);
     setEducation(newEducation);
@@ -152,41 +155,52 @@ const updateEducationHandler = async(e) => {
             />
           </div>
           <div className={styles.flex__}>
-            
-          <div className={styles.input__box}>
-            <label htmlFor="link">Duration</label>
-            <input
-              type="text"
-              placeholder="Ex. Aug 2020-Dec 2024"
-              value={duration}
-              onChange={(e) => setDuration(e.target.value)}
-            />
-
+            <div className={styles.input__box}>
+              <label htmlFor="link">Duration</label>
+              <input
+                type="text"
+                placeholder="Ex. Aug 2020-Dec 2024"
+                value={duration}
+                onChange={(e) => setDuration(e.target.value)}
+              />
             </div>
             <div className={styles.input__box}>
-            <label htmlFor="link">Score</label>
-            <input
-              type="text"
-              placeholder="Ex. 9.5 CGPA"
-              value={score}
-              onChange={(e) => setScore(e.target.value)}
-            />
-            </div>  
+              <label htmlFor="link">Score</label>
+              <input
+                type="text"
+                placeholder="Ex. 9.5 CGPA"
+                value={score}
+                onChange={(e) => setScore(e.target.value)}
+              />
+            </div>
           </div>
-          
+
           <div className={styles.buttons__}>
-
-
-          <input
-            type="submit"
-            className={styles.add_button}
-            value="Add Education"
+            {!edit &&
+            <input
+              type="submit"
+              className={styles.add_button}
+              value="Add Education"
             />
-          {edit && (
-            <button className={styles.add_button} onClick={updateEducationHandler}>
-              Edit
+            }
+            {edit && (
+              <button
+                className={styles.add_button}
+                onClick={updateEducationHandler}
+              >
+                Edit
+              </button>
+            )}
+
+            <button
+              className={styles.next__button}
+              onClick={(e) => {
+                e.preventDefault();
+                setActiveTab("projects");
+              }}
+            >
+              Next
             </button>
-          )}
           </div>
         </form>
       </div>

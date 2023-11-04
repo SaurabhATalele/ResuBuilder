@@ -26,19 +26,10 @@
     font-size: 1.6rem;
 }
 
-.button{
-    padding: 5px 20px;
-    border-radius: 5px;
-    border: 1px solid var(--color-white);
-    transition: all 0.3s ease-in-out;
-    color:#fff;
+.login__link{
+    color:rgb(255, 230, 0);
 }
 
-.button:hover{
-    background: var(--color-white);
-    color: var(--color-dark);
-
-}
 
 .link{
     text-decoration: none;
