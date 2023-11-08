@@ -66,9 +66,9 @@ const Preview = ({name, resumeData }) => {
         <Document className="resume" id={'pdf-document'}>
           <Page size="A4" style={style.page}>
             <View style={style.section}>
-              {/* {template == 1 &&<Template1 data={resumeData} />}
-              { template==2&&<Template2 data={resumeData}/> } */}
-              <Template3 data={resumeData}/>
+              {template == 1 &&<Template1 data={resumeData} />}
+              { template==2&&<Template2 data={resumeData}/> }
+              {/* <Template3 data={resumeData}/> */}
             </View>
           </Page>
         </Document>
