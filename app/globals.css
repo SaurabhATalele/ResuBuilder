@@ -17,7 +17,18 @@
 body,html{
     width: 100vw;
     min-height: 100vh;
-    overflow: hidden;
     background: linear-gradient(var(--color-secondary),var(--color-tertiary)) !important;
     font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+    width: 10px;
+    background: var(--color-white);
+     /* make scrollbar transparent */
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--color-secondary);
+    border-radius: 5px;
 }

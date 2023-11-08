@@ -18,3 +18,17 @@ export async function POST(req, res) {
     );
     }
 
+export async function DELETE(req,res){
+    const {id} = await req.json();
+    const resume = await ResumeModel.findByIdAndDelete({_id:id});
+    return new NextResponse(
+        JSON.stringify({
+            success: true,
+            message: "Resume deleted!",
+        }),
+        {
+            status: 200,
+        }
+    );
+}
+

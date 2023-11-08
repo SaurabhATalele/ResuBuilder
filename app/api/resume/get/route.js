@@ -3,7 +3,6 @@ import { ResumeModel } from "@/Utils/Backend/ResumeModel";
 import { connectDB } from "@/Utils/Backend/mongoDB";
 export async function POST(req, res) {
     const { user} = await req.json();
-    console.log(user);
     await connectDB();
     const resume = await ResumeModel.find({user}).populate('user');
     return new NextResponse(

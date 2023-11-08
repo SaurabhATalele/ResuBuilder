@@ -13,7 +13,6 @@ export const updateData = async (data, id) => {
         redirect: 'follow',
     };
     
-    console.log(process.env.NEXT_PUBLIC_RESUME_API);
     const response = await fetch(`${process.env.NEXT_PUBLIC_RESUME_API}/${id}`, requestOptions);
     const resposeData = await response.json();
     return resposeData

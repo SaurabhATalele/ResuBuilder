@@ -23,17 +23,13 @@ const Editor = ({id}) => {
     // the function to retrieve the resume data by the id and user 
     const getData = async ()=>{
       const data = await getResumeData({id,user:cookieCutter.get('user')});
-      console.log(data);
         setResumeData(data.data)
         setResumeName(data.data.name)
-        console.log(data);
-        console.log(data.data.name);
     }
 
     // the use effect to retrieve the data on the first render
     useEffect(() => {
         getData();
-        console.log(resumeData);
     }
     , [])
 

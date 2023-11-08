@@ -72,7 +72,6 @@ const Projects = ({ id, resumeData, getData,setActiveTab }) => {
       theme: "light",
     });
     getData();
-    console.log(res);
     setTitle("");
     setLink("");
     setdescription([]);
@@ -111,7 +110,6 @@ const Projects = ({ id, resumeData, getData,setActiveTab }) => {
       theme: "light",
     });
     getData();
-    console.log(res);
     const newProjects = [...projects];
     newProjects.push(newProject);
     setProjects(newProjects);
@@ -126,7 +124,6 @@ const Projects = ({ id, resumeData, getData,setActiveTab }) => {
     if(!userResponse)return
     const res = await deleteProject({ id, project: projects[index] });
     getData();
-    console.log(res);
     const newProjects = [...projects];
     newProjects.splice(index, 1);
     setProjects(newProjects);

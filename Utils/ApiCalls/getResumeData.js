@@ -1,7 +1,6 @@
 export const getResumeData = async (data) => {
     const myHeaders = new Headers();
     myHeaders.append('Content-Type', 'application/json');
-    console.log(data);
     
     const raw = JSON.stringify({
         ...data,
@@ -14,7 +13,6 @@ export const getResumeData = async (data) => {
         redirect: 'follow',
     };
     
-    console.log(process.env.NEXT_PUBLIC_RESUME_API);
     const response = await fetch(`${process.env.NEXT_PUBLIC_DATA_API}`, requestOptions);
     const resposeData = await response.json();
     return resposeData

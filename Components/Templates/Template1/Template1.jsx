@@ -5,7 +5,6 @@ import './Styles.module.css'
 import Image from 'next/image'
 
 const Template1 = ({data}) => {
-    console.log("data is",data.experience);
         const [resumeData,setResumeData] = useState(data)
   return (
 

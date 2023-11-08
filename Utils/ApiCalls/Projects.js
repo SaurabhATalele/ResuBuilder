@@ -4,7 +4,6 @@ export const addProject = async (data) => {
     const raw = JSON.stringify({
         ...data
     });
-    // console.log(raw);
     const requestOptions = {
         method: 'POST',
         headers: myHeaders,
@@ -23,7 +22,6 @@ export const updateProject = async (data)=>{
     const raw = JSON.stringify({
         ...data
     });
-    // console.log(raw);
     const requestOptions = {
         method: 'PUT',
         headers: myHeaders,
@@ -41,7 +39,6 @@ export const deleteProject = async (data) => {
     const raw = JSON.stringify({
         ...data
     });
-    // console.log(raw);
     const requestOptions = {
         method: 'DELETE',
         headers: myHeaders,

@@ -7,10 +7,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background: rgba(252, 252, 252, 0.164);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #ccc;
 }
 
 .logo{
-    color: var(--color-white);
+    color: var(--color-dark);
     font-size: 2.4rem;
 }
 
@@ -20,14 +23,14 @@
     align-items: center;
     justify-content: right;
     gap: 30px;
-    color: var(--color-white);
-    font-weight: 200;
+    color: var(--color-dark);
+    font-weight: 300;
     letter-spacing: 1px;
     font-size: 1.6rem;
 }
 
 .login__link{
-    color:rgb(255, 230, 0);
+    color: var(--color-secondary);
 }
 
 

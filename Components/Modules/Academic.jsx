@@ -121,7 +121,6 @@ const Academic = ({ id, resumeData, getData,setActiveTab }) => {
   const deleteEducationHandler = async (index) => {
     const userResponse = window.confirm("Are you sure to delete?")
     if(!userResponse)return
-    console.log(education[index]._id);
     const res = await deleteEducation({ id, eduID: education[index]._id });
     res.error ? toast.error(res.error, {
       position: "top-right",
@@ -144,7 +143,6 @@ const Academic = ({ id, resumeData, getData,setActiveTab }) => {
       theme: "light",
     });
     getData();
-    console.log("response is :", res);
     const newEducation = [...education];
     newEducation.splice(index, 1);
     setEducation(newEducation);
@@ -199,7 +197,6 @@ const Academic = ({ id, resumeData, getData,setActiveTab }) => {
             </label>
             <input
               type="text"
-              placeholder="Ex. Bachelor of Technology"
               value={qualification}
               onChange={(e) => setQualification(e.target.value)}
               required

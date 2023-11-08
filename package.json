@@ -12,6 +12,7 @@
     "@react-pdf/renderer": "^3.1.14",
     "bcryptjs": "^2.4.3",
     "cookie-cutter": "^0.2.0",
+    "framer-motion": "^10.16.4",
     "gridfs-stream": "^1.1.1",
     "html2pdf.js": "^0.10.1",
     "jsonwebtoken": "^9.0.2",

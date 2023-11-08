@@ -1,4 +1,5 @@
 .home__container {
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,7 +7,8 @@
   gap: 5rem;
   padding: 100px;
   overflow: auto;
-  background-color: var(--color-primary);
+  background-color: var(--color-white);
+  overflow-x: hidden;
 }
 
 .intro {
@@ -34,17 +36,17 @@
 .home__text h1 {
   font-size: 4.8rem;
   font-weight: 700;
-  color: var(--color-white);
+  color: var(--color-dark);
 }
 
 .unique__text {
-  color: var(--color-white) !important;
+  color: var(--color-secondary);
 }
 
 .home__text p {
   font-size: 1.8rem;
   font-weight: 200;
-  color: var(--color-white);
+  color: var(--color-dark);
 }
 
 .homeButton {
@@ -54,7 +56,7 @@
   border: 1px solid var(--color-dark);
   transition: all 0.3s ease-in-out;
   background: transparent;
-  color: var(--color-white);
+  color: var(--color-dark);
   font-size: 1.2rem;
   font-weight: 200;
   letter-spacing: 1px;
@@ -63,7 +65,7 @@
   background-color:rgb(238, 179, 52);
   width:200px;
   height:50px;
-  color:white;
+  color:var(--color-dark);
 }
 
 .highlighter {
@@ -71,7 +73,7 @@
   min-height: 500px;
   position: relative;
   border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.164);
+  background: radial-gradient(circle farthest-corner at 50% 100%,var(--color-tertiary)35%,rgba(16,24,40,0) 86%),linear-gradient(to bottom,#2a1943,#2a1943);
   backdrop-filter: blur(10px);
   display: flex;
   flex-direction: row;
@@ -79,6 +81,7 @@
   justify-content: center;
   color: var(--color-primary);
   overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.164);
 }
 
 .heading{
@@ -86,15 +89,11 @@
     right: 3rem;
     font-size: 30px;
     font-weight: 700;
-    color: var(--color-primary);
-    margin-bottom: 20px;
-    
+    color: var(--color-white);
+    bottom: 20px;
     align-items:center;
 }
-.span{
-  color:rgb(255, 196, 0);
-  font-size:30px;
-}
+
 
 
 .sample__resume{
@@ -135,12 +134,14 @@
 }
 
 .button:hover{cursor: pointer}
+
     .button {
+      
       width: fit-content;
       background: transparent; outline: none;
       position: relative;
-      border: 1px solid var(--color-white);
-      color: var(--color-white);
+      border: 1px solid var(--color-dark);
+      color: var(--color-dark);
       padding: 15px 50px;
       overflow: hidden;
       border-radius: 5px;
@@ -170,3 +171,80 @@
         font-size: .8em;
         transition: all .3s ease-in-out;
       }
+
+.features{
+  width: 25rem;
+  border-radius: 20px;
+  background-color: var(--color-white);
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding:2rem;
+  font-size: 1.6rem;
+  color: var(--color-dark);
+}
+
+.features ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.features li{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+
+/* Iages on landing page  */
+.landing__images{
+  position: relative;
+  width: 500px;
+  height: 70vh;
+}
+
+.home__image,.home__image__box{
+  width: 15rem;
+  height: 20rem;
+  object-fit: cover;
+  border-radius: .5rem;
+  z-index: 1 !important;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.164);
+  
+}
+
+.home__image__box:nth-child(1){
+  position: absolute;
+  left: 13rem;
+}
+
+.home__image__box:nth-child(2){
+  position: absolute;
+  top: 5rem;
+  right: 3rem;
+}
+
+.home__image__box:nth-child(3){
+  position: absolute;
+  top: 21rem;
+  left: 13rem;
+}
+
+/* .landing__bg{
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  width: 25rem;
+  height: 25rem;  
+  transform: translate(-50%, -50%);
+  background-color: rgba(66, 74, 119, 0.522);
+  border-radius: 2rem;
+  z-index: 0;
+} */

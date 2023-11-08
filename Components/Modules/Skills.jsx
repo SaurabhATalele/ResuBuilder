@@ -31,7 +31,6 @@ const Skills = ({ id, resumeData, getData,setActiveTab }) => {
     if(!userResponse)return
     const skill = skills[index]?._id
 
-    console.log(id);
     const res = await deleteSkill({
       id,
       user: cookieCutter.get("user"),
@@ -58,7 +57,6 @@ const Skills = ({ id, resumeData, getData,setActiveTab }) => {
       theme: "light",
     });
     getData();
-    console.log(res);
     const newSkills = [...skills];
     newSkills.splice(index, 1);
     setSkills(newSkills);
@@ -95,7 +93,6 @@ const Skills = ({ id, resumeData, getData,setActiveTab }) => {
       theme: "light",
     });
     getData();
-    console.log(res);
     setTag("");
     setSkill("");
     setEdit("");
@@ -132,7 +129,6 @@ const Skills = ({ id, resumeData, getData,setActiveTab }) => {
       theme: "light",
     });
     getData();
-    console.log(res);
     const newSkills = [...skills];
     newSkills.push(newSkill);
     setSkills(newSkills);

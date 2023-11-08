@@ -4,7 +4,6 @@ export const addEducation = async (data) => {
     const raw = JSON.stringify({
         ...data
     });
-    // console.log(raw);
     const requestOptions = {
         method: 'POST',
         headers: myHeaders,
@@ -22,7 +21,6 @@ export const deleteEducation = async (data) => {
     const raw = JSON.stringify({
         ...data
     });
-    // console.log(raw);
     const requestOptions = {
         method: 'DELETE',
         headers: myHeaders,
@@ -40,7 +38,6 @@ export const updateEducation = async (data) => {
     const raw = JSON.stringify({
         ...data
     });
-    // console.log(raw);
     const requestOptions = {
         method: 'PUT',
         headers: myHeaders,

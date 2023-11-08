@@ -16,7 +16,6 @@ const Dashboard = () => {
     const getResume = async ()=>{
         var res = await getAllResumes({user:cookieCutter.get('user')})
         res = await res.resume.filter((resume)=>resume.user._id===cookieCutter.get('user'))
-        console.log(res);
         await setResumes(res)
         return res
     }
@@ -29,7 +28,6 @@ const Dashboard = () => {
         else{
           const usr = (cookieCutter.get('user'))
           const resume =  getResume()
-          console.log(resumes);
         }
     }, [])
 

@@ -57,7 +57,6 @@ export const POST = async (req, res) => {
 export const PUT = async (req, res) => {
   try {
       const { id, user, title,link,description,project } = await req.json();
-      console.log(id,user,title,link,description,project);
       if (!id)
       return new NextResponse(
           JSON.stringify({
@@ -93,7 +92,6 @@ export const PUT = async (req, res) => {
       }
       );
   } catch (error) {
-      console.log(error);
       return new NextResponse(
       JSON.stringify({
           success: false,

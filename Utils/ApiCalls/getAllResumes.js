@@ -13,9 +13,7 @@ export const getAllResumes = async (data) => {
         redirect: 'follow',
     };
     
-    console.log(process.env.NEXT_PUBLIC_RESUME_API);
     const response = await fetch(`${process.env.NEXT_PUBLIC_RESUME_API}/get`, requestOptions);
-    console.log(response);
     const resposeData = await response.json();
     return resposeData
     }

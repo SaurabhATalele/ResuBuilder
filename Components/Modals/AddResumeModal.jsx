@@ -20,7 +20,6 @@ const AddResumeModal = ({ isOpen, onRequestClose, onSubmit }) => {
         onRequestClose();
       }
       catch(error){
-          console.log(error);
       }
   };
 

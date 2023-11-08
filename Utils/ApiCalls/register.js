@@ -16,7 +16,6 @@ export const register = async (data) => {
     };
     
     const response = await fetch(`${process.env.NEXT_PUBLIC_REGISTER_API}`, requestOptions);
-    console.log(response);
     const resposeData = await response.json();
     return resposeData
 }

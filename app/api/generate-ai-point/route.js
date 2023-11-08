@@ -5,9 +5,7 @@ const openai = new OpenAI(process.env.OPENAI_API_KEY);
 
 export async function POST(req, res) {
   try {
-    // console.log(await req.json());
     const { type, title ,points} = await req.json();
-    // console.log(title,points);
     var prompt = "";
     if(type === "project"){
       prompt = `generate a description of ${title} which has more accuracy and have all the aspects covered which are important. Generate this as a point 
@@ -33,7 +31,6 @@ export async function POST(req, res) {
       messages :[{ role: "user", content: prompt }]
         }
     );
-    console.log(gptResponse);
     return new NextResponse(
       JSON.stringify({
         success: true,
@@ -45,7 +42,6 @@ export async function POST(req, res) {
       }
     );
   } catch (err) {
-    console.log(err);
     return new NextResponse(
       JSON.stringify({
         success: false,

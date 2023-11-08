@@ -13,7 +13,6 @@ export const generatePoint = async (data) => {
         redirect: 'follow',
     };
 
-    console.log(process.env.NEXT_PUBLIC_GENERATE_PROJECT_POINT_API);
     const response = await fetch(`${process.env.NEXT_PUBLIC_GENERATE_POINT_API}`, requestOptions);
     const resposeData = await response.json();
     return resposeData

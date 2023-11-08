@@ -13,7 +13,6 @@ import { ToastContainer,toast } from "react-toastify";
 
 
 const Experience = ({ id, resumeData, getData, setActiveTab }) => {
-  console.log(resumeData);
   const [projects, setProjects] = useState([]);
 
   const [description, setdescription] = useState([""]);
@@ -56,7 +55,6 @@ const Experience = ({ id, resumeData, getData, setActiveTab }) => {
       position,
       duration,
     };
-    console.log(newProject);
     const res = await addExperience(newProject);
     res.error ? toast.error(res.error, {
       position: "top-right",
@@ -121,13 +119,11 @@ const Experience = ({ id, resumeData, getData, setActiveTab }) => {
 
   // function to edit the project
   const editProject = (index) => {
-    // console.log(projects);
     setcompany(projects[index].company);
     setPosition(projects[index].position);
     setdescription(projects[index].description);
     setDuration(projects[index].duration);
     setEdit(projects[index]._id);
-    // console.log(projects[index].id);
   };
 
   // update the experiences
@@ -174,7 +170,6 @@ const Experience = ({ id, resumeData, getData, setActiveTab }) => {
     setDuration("");
     setdescription([""]);
     setEdit("");
-    console.log(newExperience);
   };
 
   const generateDescription = async (e) => {
@@ -192,7 +187,6 @@ const Experience = ({ id, resumeData, getData, setActiveTab }) => {
       description: description,
     });
     const p = response.point.replace("-", "").split(".");
-    console.log(p);
     newdescription = [...p];
     setdescription(newdescription);
     setLoader(false);

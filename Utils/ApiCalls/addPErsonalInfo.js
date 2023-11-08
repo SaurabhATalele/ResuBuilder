@@ -4,7 +4,6 @@ export const addPersonalInfo = async (data) => {
     const raw = JSON.stringify({
         ...data
     });
-    // console.log(raw);
     const requestOptions = {
         method: 'POST',
         headers: myHeaders,

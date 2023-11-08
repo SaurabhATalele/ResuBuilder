@@ -9,10 +9,8 @@ import "react-toastify/dist/ReactToastify.css";
 const Personal = ({id,resumeData,setActiveTab}) => {
     const [data,setData] = useState({name:'',email:'',phone:'',linkedin:'',personalSite:'',country:'',state:'',city:''})
     useEffect(() => {
-        console.log("resumedata",resumeData);
         if(resumeData){
             setData(resumeData)
-            // console.log("daa",data);
         }
     }, [resumeData])
 

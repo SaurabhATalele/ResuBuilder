@@ -58,6 +58,10 @@ const ResumeSchema = new Schema({
         skills: [skillSchema],
         extraCurricular: [extraCurricular]        
     }
-});
+},
+{timestamps: true}
+);
+
+mongoose.models = {};
 
 export const ResumeModel = mongoose.models.Resume || mongoose.model('Resume', ResumeSchema);

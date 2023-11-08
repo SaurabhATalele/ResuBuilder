@@ -5,7 +5,6 @@ import { connectDB } from '@/Utils/Backend/mongoDB';
 export const POST = async (req, res) => {
     try {
         const { id, user, qualification, institute, specialization,duration,score } = await req.json();
-        console.log(id, user, qualification, institute, specialization,duration,score);
         if (!id)
             return new NextResponse(
                 JSON.stringify({
@@ -37,7 +36,6 @@ export const POST = async (req, res) => {
         );
     }
     catch (error) {
-        console.log(error);
         return new NextResponse(
             JSON.stringify({
                 success: false,
@@ -84,7 +82,6 @@ export const DELETE = async (req, res) => {
         );
     }
     catch (error) {
-        console.log(error);
         return new NextResponse(
             JSON.stringify({
                 success: false,
@@ -101,7 +98,6 @@ export const DELETE = async (req, res) => {
 export const PUT = async (req, res) => {
     try {
         const { id, eduID, qualification, institute, specialization,duration,score } = await req.json();
-        console.log(id, eduID, qualification, institute, specialization,duration,score);
         if (!id)
             return new NextResponse(
                 JSON.stringify({
@@ -121,7 +117,6 @@ export const PUT = async (req, res) => {
                 }
             }
         }, options);
-        console.log(res);
         return new NextResponse(
             JSON.stringify({
                 success: true,
@@ -133,7 +128,6 @@ export const PUT = async (req, res) => {
         );
     }
     catch (error) {
-        console.log(error);
         return new NextResponse(
             JSON.stringify({
                 success: false,

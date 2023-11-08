@@ -56,7 +56,6 @@ export const POST = async (req, res) => {
 export const DELETE = async (req, res) => {
     try {
         const { id, user, skill } = await req.json();
-        console.log(id,user,skill);
         if (!id)
         return new NextResponse(
             JSON.stringify({
@@ -77,7 +76,6 @@ export const DELETE = async (req, res) => {
     },
         options
         );
-        console.log(res);
         return new NextResponse(
         JSON.stringify({
             success: true,
@@ -88,7 +86,6 @@ export const DELETE = async (req, res) => {
         }
         );
     } catch (error) {
-        console.log(error);
         return new NextResponse(
         JSON.stringify({
             success: false,
@@ -105,7 +102,6 @@ export const DELETE = async (req, res) => {
 export const PUT = async (req, res) => {
     try {
         const { id, user, skill, tag, skills } = await req.json();
-        console.log(id,user,skills,skill,tag);
         if (!id)
         return new NextResponse(
             JSON.stringify({
@@ -139,7 +135,6 @@ export const PUT = async (req, res) => {
         }
         );
     } catch (error) {
-        console.log(error);
         return new NextResponse(
         JSON.stringify({
             success: false,

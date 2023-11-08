@@ -11,6 +11,7 @@ import {
 } from "@react-pdf/renderer";
 import styles from "./Preview.module.css";
 import Template2 from "../Templates/Template2";
+import Template3 from "../Templates/Template3/Template3";
 
 const style = StyleSheet.create({
   page: {
@@ -26,7 +27,6 @@ const style = StyleSheet.create({
 const Preview = ({name, resumeData }) => {
   const [template, setTemplate] = useState(1); 
   const pdfRef = useRef(null);
-  console.log(name);
 
   const generatePDF = () => {
     const element = document.getElementById('pdf-document'); // Replace with the ID of the HTML element you want to convert to PDF
@@ -38,7 +38,6 @@ const Preview = ({name, resumeData }) => {
       jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
     };
 
-    console.log(element);
 
     html2pdf()
       .from(element)
@@ -67,8 +66,9 @@ const Preview = ({name, resumeData }) => {
         <Document className="resume" id={'pdf-document'}>
           <Page size="A4" style={style.page}>
             <View style={style.section}>
-              {template == 1 &&<Template1 data={resumeData} />}
-              { template==2&&<Template2 data={resumeData}/> }
+              {/* {template == 1 &&<Template1 data={resumeData} />}
+              { template==2&&<Template2 data={resumeData}/> } */}
+              <Template3 data={resumeData}/>
             </View>
           </Page>
         </Document>

@@ -14,7 +14,6 @@ export const login = async (data) => {
         redirect: 'follow',
     };
     
-    console.log(process.env.NEXT_PUBLIC_LOGIN_API);
     const response = await fetch(`${process.env.NEXT_PUBLIC_LOGIN_API}`, requestOptions);
     const resposeData = await response.json();
     return resposeData
