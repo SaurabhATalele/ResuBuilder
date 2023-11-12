@@ -38,13 +38,16 @@ import { register } from '@/Utils/ApiCalls/register';
 
 
   return (
-    
+    <>
       <div className={styles.toast}>
       <ToastContainer />
       </div>
         <h2 className={styles.main__heading}>Welcome to Resume Builder</h2>
+        <div className={styles.loginpage__overlay}>
+            <Image src='/Login.svg' width={500} height={500} alt='loginImage' className={styles.image} />
         <div className={styles.container}>
-            <h1 className={styles.heading} >Register</h1>
+            <h1 className={styles.heading}>Register</h1>
+            <form className={styles.loginform} onSubmit={userLogin}>
                 <input type="text" name='name' placeholder='Name' className={styles.input} />
                 <input type="text" name='username' placeholder='Username' className={styles.input} />
                 <input type="password" name='password' placeholder='Password' className={styles.input} />
@@ -52,8 +55,9 @@ import { register } from '@/Utils/ApiCalls/register';
             </form>
         </div>
         </div>
-    </div>
-
+        </div>
+        </>
+        
   )
 }
 
