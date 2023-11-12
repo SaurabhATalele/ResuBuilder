@@ -71,6 +71,29 @@ The smartest <span className={styles.unique__text}>AI resume builder</span></h1>
         <Image src={'/SampleResume.jpg'} width={1000} height={1000} className={styles.sample__resume} alt="resume sample"/>
       </div>
 
+      <footer className={styles.footer}>
+        <Image src={'/HomeImage.png'} width={200} height={150}></Image>
+        <div>
+          <ul className={styles.links}>
+            <li>Home</li>
+            <li>Pricing</li>
+            <li>About</li>
+            <li>Login</li>
+          </ul>
+        </div>
+
+        <div>
+          <ul className={styles.links}>
+            <li>Create Resume</li>
+            <li>AI Generator</li>
+            <li>Resume Score</li>
+          </ul>
+        </div>
+
+
+      </footer>
+
+
       
     </div>
   )
