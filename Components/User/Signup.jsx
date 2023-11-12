@@ -7,7 +7,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { register } from '@/Utils/ApiCalls/register';
 
 
-    const userSignup=async (e)=>{
+const Signup = () => {
+  const userSignup=async (e)=>{
         e.preventDefault();
         const name = e.target[0].value;
         const email = e.target[1].value;
@@ -38,26 +39,32 @@ import { register } from '@/Utils/ApiCalls/register';
 
 
   return (
-    <>
+    <div className={styles.loginpage}>
       <div className={styles.toast}>
       <ToastContainer />
       </div>
+
         <h2 className={styles.main__heading}>Welcome to Resume Builder</h2>
         <div className={styles.loginpage__overlay}>
             <Image src='/Login.svg' width={500} height={500} alt='loginImage' className={styles.image} />
         <div className={styles.container}>
-            <h1 className={styles.heading}>Register</h1>
-            <form className={styles.loginform} onSubmit={userLogin}>
+            <h1 className={styles.heading} >Register</h1>
+            <form className={styles.loginform} onSubmit={userSignup}>
                 <input type="text" name='name' placeholder='Name' className={styles.input} />
                 <input type="text" name='username' placeholder='Username' className={styles.input} />
                 <input type="password" name='password' placeholder='Password' className={styles.input} />
                 <input type="password" name='confirm_password' placeholder='Confirm Password' className={styles.input} />
+                <button type='submit' className={styles.login_button}>Register</button>
+            
             </form>
+            <p className={styles.p}>Already have an account? <Link href={"/login"} className={styles.link}>Login</Link></p> 
+
         </div>
         </div>
-        </div>
-        </>
-        
+    </div>
+
   )
 }
 
+
+export default Signup
