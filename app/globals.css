@@ -23,7 +23,12 @@
     --color-tertiary:#3B0B5B;
     --color-light:#E5CFF7;
     --color-dark: #252525;
+    --color-dark-2:#1f2937;
     --color-white:#fff;
+    --color-gray-200:#e2e8f0;
+    --color-gray-400:#94a3b8;
+    --color-gray-600:#475569;
+    --color-gray-800:#1e293b;
     --color-placeholder:#a1a0a0;
 }
 
@@ -31,7 +36,7 @@ body,html{
 
     width: 100vw;
     min-height: 100vh;
-    background: linear-gradient(var(--color-secondary),var(--color-tertiary)) !important;
+    /* background: linear-gradient(var(--color-secondary),var(--color-tertiary)) !important; */
     font-size: 62.5%;
     overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
@@ -39,7 +44,7 @@ body,html{
 
 html::-webkit-scrollbar {
     width: 10px;
-    background: var(--color-white);
+    background: var(--color-primary);
      /* make scrollbar transparent */
 }
 

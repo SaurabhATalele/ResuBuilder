@@ -11,8 +11,6 @@
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -20,6 +18,7 @@
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 1rem;
+color: var(--color-gray-800);
 }
 
 .resume__container {
@@ -38,14 +37,14 @@
   gap: 1rem;
   padding: 1rem;
   justify-content: space-between;
-  color: rgb(209, 209, 209);
-  border-bottom: 1px solid rgb(153, 155, 158);
+  color: #000;
+  border-bottom: 1px solid var(--color-gray-200);
 }
 
 .create__button {
   width: fit-content;
   height:auto;
-  color: var(--color-white);
+  color: var(--color-dark-2);
   border-radius: 0.5rem;
   border: 1px solid #b6b6b6;
   background-color: transparent;
@@ -92,11 +91,29 @@
 .resume__name, .resume__date{
   font-size: 1.4rem;
   font-weight: 200;
-  color: var(--color-white);
+  color: var(--color-gray-800);
 }
 
 .resume__th{
   font-size: 1.4rem;
-  font-weight: 300;
-  color: rgb(248, 244, 0) !important;
+  /* font-weight: 200; */
+  color: var(--color-gray-600);
+}
+
+
+@media screen and (max-width:768px) {
+  .resumes{
+    width: 100vw;
+    height: 100%;
+    margin-top: 5vh;
+  }
+
+  .resume__th:nth-child(2), .resume__th:nth-child(3){
+    display: none;
+  }
+
+  .resume__date{
+    display: none;
+  }
+  
 }

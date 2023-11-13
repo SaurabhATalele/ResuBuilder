@@ -15,7 +15,7 @@ const Sidebar = ({sidebar,setSidebar}) => {
 
   return (
     <>
-        <Image src={'/icons/Menu.png'} width={48} height={48} className={styles.menu__button} onClick={()=>{
+        <Image src={'/icons/Menu.png'} width={48} height={48} alt='menu Button' className={styles.menu__button} onClick={()=>{
             setSidebar(!sidebar)}}/>
     <div className={`${styles.sidebar} ${sidebar?styles.sidebar__open:styles.sidebar__close}`}>
         <h1 className={styles.logo}>ResuBuilder</h1>

@@ -34,7 +34,8 @@
 
 .input__box label{
     font-size: 1.6rem;
-    color: var(--color-black);
+    font-weight: 200;
+    color: var(--color-gray-600);
 }
 
 .input__box input{
@@ -43,7 +44,7 @@
     border-radius: 0.5rem;
     border: 1px solid var(--color-light);
     font-size: 1.6rem;
-    color: var(--color-black);
+    color: var(--color-gray-800);
     outline: none;
     padding-left: 1rem;
     background-color: transparent;
@@ -70,8 +71,9 @@
     border-radius: 0.5rem;
     border: none;
     font-size: 1.6rem;
-    color: var(--color-primary);
+    color: var(--color-gray-800);
     background-color: var(--color-white);
+    border: 1px solid var(--color-gray-400);
     cursor: pointer;
     outline: none;
 }
@@ -121,6 +123,7 @@ __________________________________________________________________________*/
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    color: var(--color-gray-600);
 }
 
 .__elem{
@@ -133,6 +136,7 @@ __________________________________________________________________________*/
     gap: 1rem;
     padding: 1rem;
     cursor: pointer;
+    color: var(--color-gray-600);
 }
 
 .__options{
@@ -146,9 +150,10 @@ __________________________________________________________________________*/
     border-radius: 0.5rem;
     border: none;
     font-size: 1.2rem;
-    color: var(--color-primary);
+    color: var(--color-gray-800);
     /* border: 1px solid var(--color-primary); */
     background-color:var(--color-white);
+    border: 1px solid var(--color-gray-400);
     cursor: pointer;
     outline: none;
 }
@@ -159,7 +164,7 @@ __________________________________________________________________________*/
     border: none;
     font-size: 1.2rem;
     color:#ff0000 ;
-    /* border: 1px solid #ff0000; */
+    border: 1px solid #ff0000;
     background-color: white;
     cursor: pointer;
     outline: none;
@@ -167,6 +172,7 @@ __________________________________________________________________________*/
 
 .__title{
     font-weight: 600;
+    color: var(--color-gray-800);
 }
 
 .description__box{
@@ -188,7 +194,8 @@ __________________________________________________________________________*/
     border-radius: 0.5rem;
     border: none;
     font-size: 1.6rem;
-    color: var(--color-primary);
+    color: var(--color-gray-800);
+    border: 1px solid var(--color-gray-400);
     background-color: var(--color-white);
     cursor: pointer;
     outline: none;
@@ -206,6 +213,7 @@ __________________________________________________________________________*/
     font-size: 1.4rem;
     color: var(--color-primary);
     background-color: var(--color-white);
+    border: 1px solid var(--color-primary);
 }
 
 .desc{
@@ -253,7 +261,7 @@ __________________________________________________________________________*/
     border-radius: 0.5rem;
     border:none;
     font-size: 1.6rem;
-    color: var(--color-white);
+    color: var(--color-gray-800);
     background-color: transparent;
     outline: none;
     padding-left: 1rem;
@@ -274,6 +282,7 @@ __________________________________________________________________________*/
     background-color: var(--color-white);
     font-size: 1.6rem;
     color: #ff0000;
+    border: 1px solid #ff0000;
 }
 
 
@@ -289,6 +298,7 @@ __________________________________________________________________________*/
     display: flex;
     gap: 20px;
     align-items: baseline;
+    color: var(--color-gray-600);
 }
 
 
@@ -304,5 +314,53 @@ __________________________________________________________________________*/
         transform: rotate(360deg);
     }
     
+}
+
+
+@media screen and (max-width:768px){
+
+    .container{
+        flex-direction: column;
+        height: auto;
+        padding: 0;
+        overflow-y: auto;
+    }
+
+    .form__{
+    overflow: auto;
+    flex-direction: column;
+    height: fit-content;
+    }
+
+    .input__box{
+        width: 100%;
+    }
+
+    .left__block{
+        height: fit-content;
+        padding: 0 0 10rem 0;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--color-light);
+        margin-bottom: 2rem;
+    }
+
+    .__details{
+        width: 100%;
+        border-right: none;
+        height: fit-content;
+        padding: 0;
+    }
+
+    .flex__{
+        flex-direction: column;
+        gap: .5rem;
+    }
+
+    .desc{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
 }
 

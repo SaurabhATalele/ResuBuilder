@@ -32,7 +32,7 @@
     z-index: 101;
 }
 .logo{
-    color: var(--color-white);
+    color: var(--color-gray-800);
     font-size: 2.4rem;
     text-align: center;
 }
@@ -55,7 +55,7 @@
     padding: 0;
     margin: 0;
     gap: 1rem;
-    color: var(--color-white);
+    color: var(--color-gray-400);
 }
 
 .options__menu ul li{
@@ -67,18 +67,19 @@
     transition: all 0.3s ease-in-out;
     padding: 10px;
     overflow: hidden;
+    font-weight: 300 !important;
    
 }
 
 .active__tab{
-    background-color: var(--color-white);
-    border-radius: 5px;
-    color: var(--color-primary);
+    /* border-bottom:1px solid var(--color-gray-400); */
+    color: var(--color-gray-800);
 }
 
 .icon{
     width: 24px;
     height: 24px;
+    
 }
 
 .logout{
@@ -89,12 +90,13 @@
     transition: all 0.3s ease-in-out;
     padding: 10px;
     font-size: 1.6rem;
-    color: var(--color-white);
+    color: var(--color-gray-800);
 }
 
 .logout__icon{
     width: 18px;
     height: 18px;
+    filter: brightness(-100%);
 }
 
 
