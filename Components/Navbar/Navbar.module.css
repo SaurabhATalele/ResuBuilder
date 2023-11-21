@@ -31,6 +31,7 @@
 
 .login__link{
     color: var(--color-secondary);
+    font-weight: 400;
 }
 
 
