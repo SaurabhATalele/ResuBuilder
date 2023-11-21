@@ -347,6 +347,19 @@
     right: auto;
     border-radius: 10px;
   }
+  .features__container{
+    flex-direction: column;
+  }
+
+  .feature__tile{
+    width: 100%;
+    min-height: 10rem;
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+    align-items: center;
+    text-align: center;
+  }
 
   .heading{
     position: relative;
